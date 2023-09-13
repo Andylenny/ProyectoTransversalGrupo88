@@ -41,7 +41,12 @@ public class ProyectoTransversalGrupo88 {
           Materia lengua =md.buscarMateria(2);
           Inscripcion inscr= new Inscripcion(juan,lengua,8);
           
-          ind.guardarInscripcion(inscr);
+         // ind.guardarInscripcion(inscr);
+          
+         // ind.actualizarNota(4, 2, 9);
+         
+         ind.borrarInscripcionMateriaAlummno(4, 2);
+          
     }
     
 }
