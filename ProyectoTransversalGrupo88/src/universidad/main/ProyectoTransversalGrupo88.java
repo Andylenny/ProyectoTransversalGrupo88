@@ -7,6 +7,7 @@ package universidad.main;
 
 import java.sql.Connection;
 import java.time.LocalDate;
+import java.time.Month;
 import universidad.AccesoAdatos.AlumnoData;
 import universidad.AccesoAdatos.Conexion;
 import universidad.AccesoAdatos.InscripcionData;
@@ -29,23 +30,34 @@ public class ProyectoTransversalGrupo88 {
      //   Alumnos gabriel=new Alumnos(40354456, "santillan", "gabriel", LocalDate.of(2000, 7, 10), true);
        // AlumnoData alu=new AlumnoData();
       //  alu.guardarAlumno(gabriel);
+//        Alumnos federico=new Alumnos(42335567,"nadal","federico",LocalDate.of(1998, 8, 7),true);
+//        AlumnoData alu=new AlumnoData();
+//        alu.guardarAlumno(federico);
         
         
         
-        
-        AlumnoData ad =new AlumnoData();
-          MateriaData md=new MateriaData();
-          InscripcionData ind=new InscripcionData();
+      AlumnoData ad =new AlumnoData();
+        MateriaData md=new MateriaData();
+        InscripcionData ind=new InscripcionData();
+
+         Alumnos federico =ad.buscarAlumnos(6);
+         Materia lengua =md.buscarMateria(2);
+         Inscripcion inscr= new Inscripcion(federico,lengua,7);
           
-          Alumnos juan =ad.buscarAlumnos(4);
-          Materia lengua =md.buscarMateria(2);
-          Inscripcion inscr= new Inscripcion(juan,lengua,8);
           
-         // ind.guardarInscripcion(inscr);
+          
+         //ind.guardarInscripcion(inscr);
           
          // ind.actualizarNota(4, 2, 9);
          
-         ind.borrarInscripcionMateriaAlummno(4, 2);
+         //ind.borrarInscripcionMateriaAlummno(4, 2);
+         
+         
+         for(Inscripcion inscripcion: ind.obtenerInscripciones()){
+             System.out.println("id "+ inscripcion.getIdInscripcion());
+             System.out.println("Apellido "+ inscripcion.getAlumno().getApellido());
+             System.out.println("Materia "+ inscripcion.getMateria().getNombre());
+         }
           
     }
     

@@ -9,11 +9,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.mariadb.jdbc.Statement;
+import universidad.Entidades.Alumnos;
 import universidad.Entidades.Inscripcion;
+import universidad.Entidades.Materia;
 
 /**
  *
@@ -21,6 +25,8 @@ import universidad.Entidades.Inscripcion;
  */
 public class InscripcionData {
     private Connection con=null;
+   private MateriaData md=new MateriaData();
+    private AlumnoData ad=new AlumnoData();
     
     public InscripcionData(){
         this.con=Conexion.getConexion();
@@ -90,6 +96,36 @@ public class InscripcionData {
         }
         
     }
+    public List<Inscripcion>obtenerInscripciones(){
+         ArrayList<Inscripcion> cursadas= new ArrayList<>();
+         
+         String sql="SELECT * FROM inscripcion";
+         
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+            while(rs.next()) {
+               Inscripcion insc= new Inscripcion();
+               insc.setIdInscripcion(rs.getInt("idInscripto"));
+               Alumnos alu= ad.buscarAlumnos(rs.getInt("idAlumno"));
+               Materia mat=md.buscarMateria(rs.getInt("idMateria"));
+                  
+                  insc.setAlumno(alu);
+                  insc.setMateria(mat);
+                  insc.setNota(rs.getDouble("nota"));
+                  cursadas.add(insc);
+               
+               
+            }
+            
+            ps.close();
+            
+        } catch (SQLException ex) {
+         JOptionPane.showMessageDialog(null, "Error al acceder a la tabla de inscripciones");
+        }
+        return cursadas;
+     }
+ 
     }
 
 
