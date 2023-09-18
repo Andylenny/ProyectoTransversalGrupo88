@@ -35,14 +35,14 @@ public class ProyectoTransversalGrupo88 {
 //        alu.guardarAlumno(federico);
         
         
-        
-      AlumnoData ad =new AlumnoData();
-        MateriaData md=new MateriaData();
-        InscripcionData ind=new InscripcionData();
-
-         Alumnos federico =ad.buscarAlumnos(6);
-         Materia lengua =md.buscarMateria(2);
-         Inscripcion inscr= new Inscripcion(federico,lengua,7);
+//        
+//      AlumnoData ad =new AlumnoData();
+//        MateriaData md=new MateriaData();
+//        InscripcionData ind=new InscripcionData();
+//
+//         Alumnos federico =ad.buscarAlumnos(6);
+//         Materia lengua =md.buscarMateria(2);
+//         Inscripcion inscr= new Inscripcion(federico,lengua,7);
           
           
           
@@ -53,12 +53,17 @@ public class ProyectoTransversalGrupo88 {
          //ind.borrarInscripcionMateriaAlummno(4, 2);
          
          
-         for(Inscripcion inscripcion: ind.obtenerInscripciones()){
-             System.out.println("id "+ inscripcion.getIdInscripcion());
-             System.out.println("Apellido "+ inscripcion.getAlumno().getApellido());
-             System.out.println("Materia "+ inscripcion.getMateria().getNombre());
-         }
-          
+//         for(Inscripcion inscripcion: ind.obtenerInscripciones()){
+//             System.out.println("id "+ inscripcion.getIdInscripcion());
+//             System.out.println("Apellido "+ inscripcion.getAlumno().getApellido());
+//             System.out.println("Materia "+ inscripcion.getMateria().getNombre());
+//         }
+//           for(Inscripcion inscripcion : ind.obtenerIncripcionesPorAlumno()){
+//               System.out.println("id"+ inscripcion.getIdInscripcion());
+//               System.out.println("Apellido"+ inscripcion.getAlumno().getApellido());
+//               System.out.println("Materia"+ inscripcion.getMateria().getNombre());
+//               
+           }
     }
     
-}
+

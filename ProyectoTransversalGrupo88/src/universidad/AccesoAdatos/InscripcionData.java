@@ -125,6 +125,37 @@ public class InscripcionData {
         }
         return cursadas;
      }
+    public List<Inscripcion> obtenerInscripcionPorAlumno (int idAlumndo){
+        ArrayList<Inscripcion> cursadas= new ArrayList<>();
+         
+         String sql="SELECT * FROM inscripcion WHERE idAlumno = ?";
+         
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setInt(1, idAlumndo);
+            ResultSet rs=ps.executeQuery();
+            
+            while(rs.next()) {
+               Inscripcion insc= new Inscripcion();
+               insc.setIdInscripcion(rs.getInt("idInscripto"));
+               Alumnos alu= ad.buscarAlumnos(rs.getInt("idAlumno"));
+               Materia mat=md.buscarMateria(rs.getInt("idMateria"));
+                  
+                  insc.setAlumno(alu);
+                  insc.setMateria(mat);
+                  insc.setNota(rs.getDouble("nota"));
+                  cursadas.add(insc);
+               
+               
+            }
+            
+            ps.close();
+            
+        } catch (SQLException ex) {
+         JOptionPane.showMessageDialog(null, "Error al acceder a la tabla de inscripciones");
+        }
+        return cursadas;
+    }
  
     }
 
