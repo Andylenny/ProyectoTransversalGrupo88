@@ -64,15 +64,15 @@ public class ProyectoTransversalGrupo88 {
 //               System.out.println("Materia"+ inscripcion.getMateria().getNombre());
 //               
            
-    for(Materia materia : ind.obtenerMateriasCursadas(1)) {
-     
-        System.out.println("nombre"+materia.getNombre());
-        System.out.println("año"+materia.getAnioMateria());
+//    for(Materia materia : ind.obtenerMateriasCursadas(1)) {
+//     
+//        System.out.println("nombre"+materia.getNombre());
+//        System.out.println("año"+materia.getAnioMateria());
     }
             
         
     
-}
+
     
    
        
