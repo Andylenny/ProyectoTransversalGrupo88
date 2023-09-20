@@ -84,6 +84,11 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         });
 
         jBeliminar.setText("ELIMINAR");
+        jBeliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeliminarActionPerformed(evt);
+            }
+        });
 
         jBguardar.setText("GUARDAR");
         jBguardar.addActionListener(new java.awt.event.ActionListener() {
@@ -251,6 +256,26 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jBsalirActionPerformed
+
+    private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
+        // TODO add your handling code here:
+         int dni = Integer.parseInt(jTdocumento.getText());
+        AlumnoData alumnoEncontrado = new AlumnoData();
+
+
+        Alumnos alumno = (Alumnos) alumnoEncontrado.buscarAlumnosporDni(dni);
+
+        if (alumno != null) {
+            // Si se encuentra el alumno, elimínalo
+            alumnoEncontrado.eliminarAlumno(dni);
+            JOptionPane.showMessageDialog(this, "Alumno eliminado");
+        } else {
+            // Si no se encuentra el alumno, muestra un mensaje de error
+            JOptionPane.showMessageDialog(this, "Alumno no encontrado");
+        }
+
+
+    }//GEN-LAST:event_jBeliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
