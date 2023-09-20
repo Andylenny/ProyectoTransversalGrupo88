@@ -90,6 +90,11 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         jBsalir.setText("Salir");
 
         jBbuscar.setText("Buscar");
+        jBbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBbuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,6 +202,26 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(this, "Alumno Guardado");
         
     }//GEN-LAST:event_jBguardarActionPerformed
+
+    private void jBbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarActionPerformed
+        // TODO add your handling code here:
+         int dni = Integer.parseInt(jTdocumento.getText());
+        AlumnoData alumnoEncontrado = new AlumnoData();
+
+// Realiza la búsqueda del alumno por DNI
+        Alumnos alumno = alumnoEncontrado.buscarAlumnosporDni(dni);
+
+        if (alumno != null) {
+            // Si se encuentra el alumno, muestra su información en los campos de texto
+            jTdocumento.setText(String.valueOf(alumno.getDni()));
+            jTapellido.setText(alumno.getApellido());
+            jTnombre.setText(alumno.getNombre());
+
+        } else {
+            // Si no se encuentra el alumno, muestra un mensaje de error
+            JOptionPane.showMessageDialog(this, "Alumno no encontrado");
+        }
+    }//GEN-LAST:event_jBbuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
