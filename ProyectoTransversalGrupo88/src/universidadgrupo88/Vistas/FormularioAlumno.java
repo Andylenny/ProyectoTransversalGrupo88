@@ -77,6 +77,11 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         jLabel6.setText("Fecha Nacimiento");
 
         jBnuevo.setText("NUEVO");
+        jBnuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBnuevoActionPerformed(evt);
+            }
+        });
 
         jBeliminar.setText("ELIMINAR");
 
@@ -189,7 +194,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
 
     private void jBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarActionPerformed
         // TODO add your handling code here:
-         int dni = Integer.parseInt(jTdocumento.getText());
+        int dni = Integer.parseInt(jTdocumento.getText());
         String apellido = jTapellido.getText();
         String nombre = jTnombre.getText();
         boolean estado = jRestado.isEnabled();
@@ -200,12 +205,12 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         AlumnoData alu = new AlumnoData();
         alu.guardarAlumno(alumno);
         JOptionPane.showMessageDialog(this, "Alumno Guardado");
-        
+
     }//GEN-LAST:event_jBguardarActionPerformed
 
     private void jBbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarActionPerformed
         // TODO add your handling code here:
-         int dni = Integer.parseInt(jTdocumento.getText());
+        int dni = Integer.parseInt(jTdocumento.getText());
         AlumnoData alumnoEncontrado = new AlumnoData();
 
 // Realiza la búsqueda del alumno por DNI
@@ -222,6 +227,20 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Alumno no encontrado");
         }
     }//GEN-LAST:event_jBbuscarActionPerformed
+
+    private void jBnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnuevoActionPerformed
+        // TODO add your handling code here:
+        activarCampos();
+        limpiar();
+        jTdocumento.requestFocus();
+        jTapellido.setEnabled(false);
+        jTnombre.setEnabled(false);
+        jRestado.setEnabled(false);
+        jCfechaNac.setEnabled(isIcon);
+        jBguardar.setEnabled(true);
+        jBsalir.setEnabled(true);
+        jBbuscar.setEnabled(true);
+    }//GEN-LAST:event_jBnuevoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -242,4 +261,29 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTdocumento;
     private javax.swing.JTextField jTnombre;
     // End of variables declaration//GEN-END:variables
+ private void desactivarCampos() {
+        jTdocumento.setEnabled(false);
+        jTapellido.setEnabled(false);
+        jTnombre.setEnabled(false);
+        jRestado.isEnabled();
+
+    }
+
+    private void activarCampos() {
+        jTdocumento.setEnabled(true);
+        jTapellido.setEnabled(true);
+        jTnombre.setEnabled(true);
+        jRestado.isEnabled();
+
+    }
+
+    private void limpiar() {
+
+        jTdocumento.setText("");
+        jTapellido.setText("");
+        jTnombre.setText("");
+        jRestado.isEnabled();
+
+    }
+
 }
