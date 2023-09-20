@@ -56,7 +56,7 @@
                                       <Component id="jCfechaNac" min="-2" pref="226" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="145" max="32767" attributes="0"/>
+                              <EmptySpace pref="26" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jBsalir" min="-2" max="-2" attributes="0"/>
@@ -130,7 +130,7 @@
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <Component id="jCfechaNac" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="70" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jBnuevo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBeliminar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -208,6 +208,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="GUARDAR"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBguardarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBsalir">
       <Properties>

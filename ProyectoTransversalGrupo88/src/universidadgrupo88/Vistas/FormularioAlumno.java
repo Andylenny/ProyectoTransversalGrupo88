@@ -5,6 +5,12 @@
  */
 package universidadgrupo88.Vistas;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import javax.swing.JOptionPane;
+import universidad.AccesoAdatos.AlumnoData;
+import universidad.Entidades.Alumnos;
+
 /**
  *
  * @author sheff
@@ -75,6 +81,11 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         jBeliminar.setText("ELIMINAR");
 
         jBguardar.setText("GUARDAR");
+        jBguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBguardarActionPerformed(evt);
+            }
+        });
 
         jBsalir.setText("Salir");
 
@@ -104,7 +115,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
                                         .addComponent(jLabel6)
                                         .addGap(78, 78, 78)
                                         .addComponent(jCfechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)))
                         .addComponent(jBsalir))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +170,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jCfechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBnuevo)
                     .addComponent(jBeliminar)
@@ -170,6 +181,22 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarActionPerformed
+        // TODO add your handling code here:
+         int dni = Integer.parseInt(jTdocumento.getText());
+        String apellido = jTapellido.getText();
+        String nombre = jTnombre.getText();
+        boolean estado = jRestado.isEnabled();
+        LocalDate fechaNacimiento = jCfechaNac.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+        Alumnos alumno = new Alumnos(dni, apellido, nombre, fechaNacimiento, estado);
+
+        AlumnoData alu = new AlumnoData();
+        alu.guardarAlumno(alumno);
+        JOptionPane.showMessageDialog(this, "Alumno Guardado");
+        
+    }//GEN-LAST:event_jBguardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
