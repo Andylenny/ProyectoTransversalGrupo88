@@ -5,6 +5,10 @@
  */
 package universidadgrupo88.Vistas;
 
+import javax.swing.JOptionPane;
+import universidad.AccesoAdatos.MateriaData;
+import universidad.Entidades.Materia;
+
 /**
  *
  * @author Lourdes
@@ -155,7 +159,24 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
-        // buscar
+            int codigo = Integer.parseInt(jtCodigo.getText());
+       MateriaData materiaEncontrada = new MateriaData();
+
+// Realiza la búsqueda del alumno por DNI
+       Materia materia = materiaEncontrada.buscarMateria(codigo);
+
+        if (materia != null) {
+            // Si se encuentra el alumno, muestra su información en los campos de texto
+            jtCodigo.setText(String.valueOf(materia.getIdMateria()));
+            jtNombre.setText(materia.getNombre());
+            jtAño.setText(String.valueOf(materia.getAnioMateria()));
+            jrEstado.setSelected(materia.isActivo());
+
+        } else {
+            // Si no se encuentra el alumno, muestra un mensaje de error
+            JOptionPane.showMessageDialog(this, "Materia no encontrada");
+        }
+
         
     }//GEN-LAST:event_jbBuscarActionPerformed
 
