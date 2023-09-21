@@ -259,7 +259,8 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
 
     private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
         // TODO add your handling code here:
-         int dni = Integer.parseInt(jTdocumento.getText());
+         
+        int dni = Integer.parseInt(jTdocumento.getText());
         AlumnoData alumnoEncontrado = new AlumnoData();
 
 
