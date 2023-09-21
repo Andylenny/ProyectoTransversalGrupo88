@@ -55,6 +55,11 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         jbGuardar.setText("Guardar");
 
         jbBuscar.setText("Buscar");
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarActionPerformed(evt);
+            }
+        });
 
         jbSalir.setText("Salir");
 
@@ -148,6 +153,11 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+        // buscar
+        
+    }//GEN-LAST:event_jbBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

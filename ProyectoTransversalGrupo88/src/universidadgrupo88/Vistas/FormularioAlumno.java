@@ -134,8 +134,8 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel6)
                                         .addGap(78, 78, 78)
-                                        .addComponent(jCfechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)))
+                                        .addComponent(jCfechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)))
                         .addComponent(jBsalir))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,7 +189,9 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(jCfechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jCfechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBnuevo)
@@ -231,7 +233,10 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
             jTdocumento.setText(String.valueOf(alumno.getDni()));
             jTapellido.setText(alumno.getApellido());
             jTnombre.setText(alumno.getNombre());
-
+            jRestado.setSelected(alumno.isEstado());
+            
+            
+            
         } else {
             // Si no se encuentra el alumno, muestra un mensaje de error
             JOptionPane.showMessageDialog(this, "Alumno no encontrado");
@@ -264,11 +269,11 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         AlumnoData alumnoEncontrado = new AlumnoData();
 
 
-        Alumnos alumno = (Alumnos) alumnoEncontrado.buscarAlumnosporDni(dni);
+        Alumnos alumno = alumnoEncontrado.buscarAlumnosporDni(dni);
 
         if (alumno != null) {
             // Si se encuentra el alumno, elimínalo
-            alumnoEncontrado.eliminarAlumno(dni);
+            alumnoEncontrado.eliminarAlumno(alumno);
             JOptionPane.showMessageDialog(this, "Alumno eliminado");
         } else {
             // Si no se encuentra el alumno, muestra un mensaje de error
