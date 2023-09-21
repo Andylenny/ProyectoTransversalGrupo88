@@ -6,7 +6,14 @@
 package universidadgrupo88.Vistas;
 
 import java.time.LocalDate;
+<<<<<<< Updated upstream
 import java.time.ZoneId;
+=======
+import java.time.Month;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.TreeSet;
+>>>>>>> Stashed changes
 import javax.swing.JOptionPane;
 import universidad.AccesoAdatos.AlumnoData;
 import universidad.Entidades.Alumnos;
@@ -16,6 +23,9 @@ import universidad.Entidades.Alumnos;
  * @author sheff
  */
 public class FormularioAlumno extends javax.swing.JInternalFrame {
+public static TreeSet<Alumnos> listaAlumnos=new TreeSet<>();
+private AlumnoData alumnodata = new AlumnoData();
+private Alumnos alumno = new Alumnos();
 
     /**
      * Creates new form FormularioAlumno
@@ -101,6 +111,18 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         jBsalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBsalirActionPerformed(evt);
+            }
+        });
+
+        jTdocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTdocumentoActionPerformed(evt);
+            }
+        });
+
+        jCfechaNac.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jCfechaNacPropertyChange(evt);
             }
         });
 
@@ -204,6 +226,25 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< Updated upstream
+=======
+    private void jCfechaNacPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jCfechaNacPropertyChange
+        // TODO add your handling code here:
+        if(jCfechaNac.getDate()!=null){
+            
+        }
+    }//GEN-LAST:event_jCfechaNacPropertyChange
+
+    private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
+        // TODO add your handling code here:
+       
+        jTdocumento.setText(""); 
+        jTapellido.setText("");
+        jTnombre.setText("");
+        jRestado.setText("");
+    }//GEN-LAST:event_jBeliminarActionPerformed
+
+>>>>>>> Stashed changes
     private void jBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarActionPerformed
         // TODO add your handling code here:
         int dni = Integer.parseInt(jTdocumento.getText());
@@ -212,11 +253,16 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         boolean estado = jRestado.isEnabled();
         LocalDate fechaNacimiento = jCfechaNac.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
+<<<<<<< Updated upstream
         Alumnos alumno = new Alumnos(dni, apellido, nombre, fechaNacimiento, estado);
+=======
+        Alumnos alumno = new Alumnos(dni, apellido,nombre, fechaNacimiento, estado);
+>>>>>>> Stashed changes
 
         AlumnoData alu = new AlumnoData();
         alu.guardarAlumno(alumno);
         JOptionPane.showMessageDialog(this, "Alumno Guardado");
+<<<<<<< Updated upstream
 
     }//GEN-LAST:event_jBguardarActionPerformed
 
@@ -246,6 +292,15 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Alumno no encontrado");
         }
     }//GEN-LAST:event_jBbuscarActionPerformed
+=======
+        
+        
+    }//GEN-LAST:event_jBguardarActionPerformed
+
+    private void jTdocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTdocumentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTdocumentoActionPerformed
+>>>>>>> Stashed changes
 
     private void jBnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnuevoActionPerformed
         // TODO add your handling code here:
@@ -259,6 +314,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         jBguardar.setEnabled(true);
         jBsalir.setEnabled(true);
         jBbuscar.setEnabled(true);
+<<<<<<< Updated upstream
     }//GEN-LAST:event_jBnuevoActionPerformed
 
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
@@ -287,6 +343,41 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Alumno no encontrado");
         }
     }//GEN-LAST:event_jBeliminarActionPerformed
+=======
+        
+        
+    }//GEN-LAST:event_jBnuevoActionPerformed
+
+    private void jBbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarActionPerformed
+        // TODO add your handling code here:
+         AlumnoData alumnoEncontrado = new AlumnoData();
+         alumnoEncontrado.buscarAlumnosporDni(dni);
+         
+//        System.out.println("dni: " + alumnoEncontrado.());
+//        System.out.println("apellido: " + alumnoEncontrado.getApellido());
+        int dni = Integer.parseInt(jTdocumento.getText());
+        String apellido = jTapellido.getText();
+        String nombre = jTnombre.getText();
+        for(Alumnos alumno: alumnoEncontrado.listarAlumnos()){
+            if(alumno.getDni()==dni){
+               jTdocumento.setText(String.valueOf(alumno.getDni()));
+
+                
+            }
+        }
+//            System.out.println(alumno.setApellido(alumno.g());
+//            System.out.println(alumno.getNombre());
+//            System.out.println(alumno.getFechaNacimiento());
+                
+       
+            
+        
+        
+    }//GEN-LAST:event_jBbuscarActionPerformed
+
+    
+    
+>>>>>>> Stashed changes
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -307,7 +398,12 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTdocumento;
     private javax.swing.JTextField jTnombre;
     // End of variables declaration//GEN-END:variables
+<<<<<<< Updated upstream
  private void desactivarCampos() {
+=======
+
+   private void desactivarCampos() {
+>>>>>>> Stashed changes
         jTdocumento.setEnabled(false);
         jTapellido.setEnabled(false);
         jTnombre.setEnabled(false);
@@ -331,5 +427,10 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         jRestado.isEnabled();
 
     }
+<<<<<<< Updated upstream
 
 }
+=======
+    }
+
+>>>>>>> Stashed changes

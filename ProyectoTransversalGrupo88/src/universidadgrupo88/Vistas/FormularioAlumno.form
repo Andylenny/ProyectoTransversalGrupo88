@@ -230,6 +230,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTdocumento">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTdocumentoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTapellido">
     </Component>
@@ -237,6 +240,14 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRestado">
     </Component>
+<<<<<<< Updated upstream
+=======
+    <Component class="com.toedter.calendar.JCalendar" name="jCfechaNac">
+      <Events>
+        <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="jCfechaNacPropertyChange"/>
+      </Events>
+    </Component>
+>>>>>>> Stashed changes
     <Component class="javax.swing.JButton" name="jBbuscar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar"/>
@@ -244,8 +255,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBbuscarActionPerformed"/>
       </Events>
+<<<<<<< Updated upstream
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="jCfechaNac">
+=======
+>>>>>>> Stashed changes
     </Component>
   </SubComponents>
 </Form>

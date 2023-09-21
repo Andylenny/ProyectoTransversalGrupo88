@@ -32,11 +32,19 @@ public class ConsultasAlumnos extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
+<<<<<<< Updated upstream
         escritorio = new javax.swing.JDesktopPane();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMalumno = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+=======
+        jDescritorio = new javax.swing.JDesktopPane();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMformularioAlumno = new javax.swing.JMenu();
+        jMformularioalumnos = new javax.swing.JMenuItem();
+>>>>>>> Stashed changes
         jMconsultas = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMadministracion = new javax.swing.JMenu();
@@ -54,6 +62,7 @@ public class ConsultasAlumnos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+<<<<<<< Updated upstream
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
@@ -62,6 +71,19 @@ public class ConsultasAlumnos extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+=======
+        jDescritorio.setBackground(new java.awt.Color(0, 153, 153));
+        jDescritorio.setForeground(new java.awt.Color(51, 0, 255));
+
+        javax.swing.GroupLayout jDescritorioLayout = new javax.swing.GroupLayout(jDescritorio);
+        jDescritorio.setLayout(jDescritorioLayout);
+        jDescritorioLayout.setHorizontalGroup(
+            jDescritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 490, Short.MAX_VALUE)
+        );
+        jDescritorioLayout.setVerticalGroup(
+            jDescritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+>>>>>>> Stashed changes
             .addGap(0, 504, Short.MAX_VALUE)
         );
 
@@ -69,11 +91,19 @@ public class ConsultasAlumnos extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< Updated upstream
             .addComponent(escritorio)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(escritorio)
+=======
+            .addComponent(jDescritorio)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDescritorio)
+>>>>>>> Stashed changes
         );
 
         jDesktopPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -102,8 +132,14 @@ public class ConsultasAlumnos extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jMalumno.setText("Alumno");
+        jMformularioAlumno.setText("Alumno");
+        jMformularioAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMformularioAlumnoActionPerformed(evt);
+            }
+        });
 
+<<<<<<< Updated upstream
         jMenuItem2.setText("Formulario de alumno");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,8 +147,17 @@ public class ConsultasAlumnos extends javax.swing.JFrame {
             }
         });
         jMalumno.add(jMenuItem2);
+=======
+        jMformularioalumnos.setText("Formulario Alumnos");
+        jMformularioalumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMformularioalumnosActionPerformed(evt);
+            }
+        });
+        jMformularioAlumno.add(jMformularioalumnos);
+>>>>>>> Stashed changes
 
-        jMenuBar1.add(jMalumno);
+        jMenuBar1.add(jMformularioAlumno);
 
         jMconsultas.setText("Consultas");
 
@@ -220,13 +265,32 @@ public class ConsultasAlumnos extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
+<<<<<<< Updated upstream
          escritorio.removeAll();
         escritorio.repaint();
         ConsultaAlumnoxMateria cam= new ConsultaAlumnoxMateria();
         cam.setVisible(true);
         escritorio.add(cam);
         escritorio.moveToFront(cam);
+=======
+       
+>>>>>>> Stashed changes
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMformularioAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMformularioAlumnoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jMformularioAlumnoActionPerformed
+
+    private void jMformularioalumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMformularioalumnosActionPerformed
+        // TODO add your handling code here:
+         jDescritorio.removeAll();
+        jDescritorio.repaint();
+        FormularioAlumno x=new FormularioAlumno();
+        x.setVisible(true);
+        jDescritorio.add(x);
+        jDescritorio.moveToFront(x);
+    }//GEN-LAST:event_jMformularioalumnosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,14 +328,18 @@ public class ConsultasAlumnos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< Updated upstream
     private javax.swing.JDesktopPane escritorio;
+=======
+    private javax.swing.JDesktopPane jDescritorio;
+>>>>>>> Stashed changes
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JMenu jMadministracion;
-    private javax.swing.JMenu jMalumno;
     private javax.swing.JMenu jMconsultas;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+<<<<<<< Updated upstream
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
@@ -279,6 +347,14 @@ public class ConsultasAlumnos extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+=======
+    private javax.swing.JMenu jMenu9;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu jMformularioAlumno;
+    private javax.swing.JMenuItem jMformularioalumnos;
+>>>>>>> Stashed changes
     private javax.swing.JMenu jMmateria;
     private javax.swing.JMenu jMsalir;
     private javax.swing.JPanel jPanel1;
