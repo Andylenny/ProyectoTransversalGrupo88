@@ -48,22 +48,21 @@ public class MateriaData {
 
     }
       
-       public Materia buscarMateria(int id) {
+       public Materia buscarMateria(Materia materia) {
         String sql = "SELECT nombre, año, estado FROM materia WHERE idMateria=? AND estado=1";
-        Materia materia = null;
-
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, materia.getIdMateria());
+            System.out.println(materia.getIdMateria());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                materia = new Materia();
-                materia.setIdMateria(id);
+                materia.setIdMateria(materia.getIdMateria());
                 materia.setNombre(rs.getString("nombre"));
                 materia.setAnioMateria(rs.getInt("año"));
                 materia.setActivo(true);
             } else {
                 JOptionPane.showMessageDialog(null, "No existe esta materia");
+                materia=null;
             }
             ps.close();
 
@@ -98,12 +97,13 @@ public class MateriaData {
 
     }
         
-          public void eliminarMateria(int id) {
+          public void eliminarMateria(Materia materia) {
         String sql = "UPDATE materia SET estado = 0 WHERE idMateria = ? ";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, materia.getIdMateria());
             int exito = ps.executeUpdate();
+            System.out.println("toy");
             if (exito == 1) {
                 JOptionPane.showMessageDialog(null, "Materia Eliminada");
             }

@@ -5,6 +5,10 @@
  */
 package universidadgrupo88.Vistas;
 
+import javax.swing.JOptionPane;
+import universidad.AccesoAdatos.MateriaData;
+import universidad.Entidades.Materia;
+
 /**
  *
  * @author Lourdes
@@ -51,6 +55,11 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         jbNuevo.setText("Nuevo");
 
         jbEliminar.setText("Eliminar");
+        jbEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEliminarActionPerformed(evt);
+            }
+        });
 
         jbGuardar.setText("Guardar");
 
@@ -158,6 +167,24 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         // buscar
         
     }//GEN-LAST:event_jbBuscarActionPerformed
+
+    private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
+        // Eliminar
+        int idMateria=Integer.parseInt(jtCodigo.getText());
+        Materia materia=new Materia(idMateria, "",1 , true);
+        System.out.println(materia.getIdMateria());
+        MateriaData materiaEncontrado = new MateriaData();
+        materia=materiaEncontrado.buscarMateria(materia);
+        System.out.println(materia.getIdMateria());
+        if (materia != null) {
+            // Si se encuentra el alumno, elimínalo
+            materiaEncontrado.eliminarMateria(materia);
+            JOptionPane.showMessageDialog(this, "Materia eliminada");
+        } else {
+            // Si no se encuentra el alumno, muestra un mensaje de error
+            JOptionPane.showMessageDialog(this, "Materia no encontrado");
+        }
+    }//GEN-LAST:event_jbEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
