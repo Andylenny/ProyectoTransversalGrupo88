@@ -22,29 +22,17 @@
     </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMformularioAlumno">
+        <Menu class="javax.swing.JMenu" name="jMalumno">
           <Properties>
             <Property name="text" type="java.lang.String" value="Alumno"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMformularioAlumnoActionPerformed"/>
-          </Events>
           <SubComponents>
-<<<<<<< Updated upstream
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Formulario de alumno"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
-=======
-            <MenuItem class="javax.swing.JMenuItem" name="jMformularioalumnos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Formulario Alumnos"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMformularioalumnosActionPerformed"/>
->>>>>>> Stashed changes
               </Events>
             </MenuItem>
           </SubComponents>
@@ -163,37 +151,17 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< Updated upstream
                   <Component id="escritorio" alignment="0" max="32767" attributes="0"/>
-=======
-                  <Component id="jDescritorio" alignment="0" max="32767" attributes="0"/>
->>>>>>> Stashed changes
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< Updated upstream
                   <Component id="escritorio" alignment="0" max="32767" attributes="0"/>
-=======
-                  <Component id="jDescritorio" alignment="0" max="32767" attributes="0"/>
->>>>>>> Stashed changes
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-<<<<<<< Updated upstream
             <Container class="javax.swing.JDesktopPane" name="escritorio">
-=======
-            <Container class="javax.swing.JDesktopPane" name="jDescritorio">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="0" red="33" type="rgb"/>
-                </Property>
-              </Properties>
->>>>>>> Stashed changes
 
               <Layout>
                 <DimensionLayout dim="0">
